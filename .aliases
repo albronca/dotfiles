@@ -1,0 +1,21 @@
+alias ..='cd ..'
+alias b='bundle'
+alias be='bundle exec'
+alias dt='cd ~/Desktop'
+alias dl='cd ~/Downloads'
+alias ls='ls -G'
+alias lsa='ls -a'
+alias pt='cd ~/workspace/progress-tracker'
+alias rc='bundle exec rails console'
+alias rs='bundle exec rails server'
+alias v='vim'
+alias w='webpack'
+alias ww='webpack --watch'
+alias yi='yarn install'
+alias yw='yarn webpack'
+
+# safer destructive commands
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+

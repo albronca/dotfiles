@@ -1,0 +1,13 @@
+[user]
+  name = Alexander Bronca
+  email = alexander.bronca@gmail.com
+
+
+[alias]
+  co = checkout
+  cob = checkout -b
+  cm = commit -m
+
+
+[core]
+  excludesfile = /Users/al/.gitignore_global

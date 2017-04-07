@@ -1,0 +1,13 @@
+for DOTFILE in $HOME/.git-{completion.bash,prompt.sh}; do
+  [ -f "$DOTFILE" ] && source "$DOTFILE"
+done
+
+g () {
+  if [ $# -eq 0 ]
+  then
+    git status
+  else
+    git "$@"
+  fi
+}
+__git_complete g _git

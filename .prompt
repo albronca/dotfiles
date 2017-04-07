@@ -1,0 +1,6 @@
+GREEN='\[\e[32m\]'
+BLUE='\[\e[34m\]'
+RESET='\[\e[0m\]'
+
+export PS1="$GREEN\u (\W)$BLUE\$(__git_ps1) $GREEN> $RESET"
+

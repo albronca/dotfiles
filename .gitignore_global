@@ -1,0 +1,8 @@
+.DS_Store
+
+/log
+/tmp
+.byebug_history
+
+node_modules
+elm_stuff

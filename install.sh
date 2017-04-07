@@ -6,19 +6,21 @@ EOF
 DIR="$HOME/dotfiles"
 OLDDIR="$HOME/dotfiles_backup"
 
-echo "📝 Backing up existing dotfiles..."
-mkdir $OLDDIR
+if confirm "Back up existing dotfiles? (y/n)"; then
+  echo "📝 Backing up existing dotfiles..."
+  BACKUP="$HOME/dotfiles_backup_$(date +"%m_%d_%Y_%H%M%S")"
+  mkdir "$BACKUP"
 
-for FILE in $DOTFILES; do
-  [ -f ~/.$FILE ] && mv -f ~/.$FILE $OLDDIR
-done
+  for DOTFILE in $DOTFILES; do
+    [ -f "$HOME/.$DOTFILE" ] && mv "$HOME/.$DOTFILE" "$BACKUPS"
+  done
 
-[ -d ~/.vim ] && mv -f ~/.vim $OLDDIR
+  [ -d ~/.vim ] && mv -f ~/.vim $OLDDIR
 
-echo "✅ ...done!"
+  echo "✅ ...done!"
+fi
 
-
-echo "📝 Copying new dotfiles..."
+echo "📝 Adding new dotfiles..."
 
 for FILE in $DOTFILES; do
   cp -f $DIR/.$FILE ~/.$FILE

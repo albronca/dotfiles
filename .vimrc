@@ -1,1 +1,0 @@
-/Users/al/.vim/vimrc

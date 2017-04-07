@@ -1,5 +1,9 @@
-nice simple dotfiles
+_nice dotfiles_
 
 vim stuff lives [here](https://github.com/albronca/.vim)
 
-install script coming soon
+# Setup
+```
+cd && git clone --recursive https://github.com/albronca/dotfiles.git && cd
+chmod +x ~/dotfiles/install.sh && ~/dotfiles/install.sh
+```

@@ -6,14 +6,18 @@ SPACESHIP_PROMPT_ORDER=(
   dir
   host
   git
+  ruby
+  exec_time
+  line_sep
   jobs
   char
+  vi_mode
 )
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_GIT_PREFIX=""
-SPACESHIP_GIT_STATUS_COLOR="yellow"
-SPACESHIP_GIT_STATUS_PREFIX=" ("
-SPACESHIP_GIT_STATUS_SUFFIX=")"
+SPACESHIP_VI_MODE_NORMAL="❮"
+SPACESHIP_VI_MODE_INSERT=" "
+SPACESHIP_VI_MODE_COLOR="yellow"
+SPACESHIP_VI_MODE_SUFFIX=""
+SPACESHIP_CHAR_SYMBOL="↪"
 
 plugins=(
   git
@@ -21,6 +25,7 @@ plugins=(
   osx
   rails
   tmuxinator
+  vi-mode
   yarn
 )
 
@@ -48,7 +53,9 @@ alias be='bundle exec'
 alias dt='cd ~/Desktop'
 alias dl='cd ~/Downloads'
 alias dev='cd ~/Development'
+alias mux='tmuxinator'
+alias reload='source ~/.zshrc'
 alias tmuxconf='vim ~/.tmux.conf'
 alias vimrc='vim ~/.vim/vimrc'
+alias v='vim'
 alias zshrc='vim ~/.zshrc'
-alias reload='source ~/.zshrc'

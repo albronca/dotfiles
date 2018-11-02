@@ -11,13 +11,8 @@ SPACESHIP_PROMPT_ORDER=(
   line_sep
   jobs
   char
-  vi_mode
 )
-SPACESHIP_VI_MODE_NORMAL="❮"
-SPACESHIP_VI_MODE_INSERT=" "
-SPACESHIP_VI_MODE_COLOR="yellow"
-SPACESHIP_VI_MODE_SUFFIX=""
-SPACESHIP_CHAR_SYMBOL="↪"
+SPACESHIP_CHAR_SYMBOL="↪ "
 
 plugins=(
   git
@@ -25,7 +20,6 @@ plugins=(
   osx
   rails
   tmuxinator
-  vi-mode
   yarn
 )
 
@@ -38,6 +32,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+PATH=$PATH:/usr/local/sbin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

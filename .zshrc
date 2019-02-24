@@ -43,6 +43,9 @@ export EDITOR='vim'
 # fix tmuxinator window titles
 export DISABLE_AUTO_TITLE=true
 
+# fix HEAD^
+unsetopt nomatch
+
 # Aliases
 alias be='bundle exec'
 alias dt='cd ~/Desktop'

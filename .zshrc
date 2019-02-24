@@ -1,6 +1,6 @@
 export ZSH=/Users/abronca/.oh-my-zsh
 
-ZSH_THEME="spaceship"
+ZSH_THEME='spaceship'
 SPACESHIP_PROMPT_ORDER=(
   user
   dir
@@ -12,7 +12,7 @@ SPACESHIP_PROMPT_ORDER=(
   jobs
   char
 )
-SPACESHIP_CHAR_SYMBOL="↪ "
+SPACESHIP_CHAR_SYMBOL='↪ '
 
 plugins=(
   git
@@ -30,8 +30,8 @@ source $ZSH/oh-my-zsh.sh
 # Setup fzf
 # ---------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+[[ $- == *i* ]] && source '/usr/local/opt/fzf/shell/completion.zsh' 2> /dev/null
+source '/usr/local/opt/fzf/shell/key-bindings.zsh'
 PATH=$PATH:/usr/local/sbin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -47,7 +47,6 @@ export DISABLE_AUTO_TITLE=true
 alias be='bundle exec'
 alias dt='cd ~/Desktop'
 alias dl='cd ~/Downloads'
-alias dev='cd ~/Development'
 alias mux='tmuxinator'
 alias reload='source ~/.zshrc'
 alias tmuxconf='vim ~/.tmux.conf'

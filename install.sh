@@ -1,40 +1,53 @@
-read -d '' DOTFILES << EOF
-  aliases             bash_profile  bashrc    fzf.bash
-  git-completion.bash git-prompt.sh git-stuff gitconfig
-  gitignore_global    gitmodules    path      prompt
-EOF
+#!/bin/sh
 
-DIR="$HOME/dotfiles"
+############
+# Homebrew #
+############
 
-confirm() {
-  read -r -p "${1:-Are you sure? [y/N]} " RESPONSE
-  case "$RESPONSE" in
-    [yY][eE][sS]|[yY]) true;;
-    *) false;;
-  esac
-}
-
-if confirm "Back up existing dotfiles? (y/n)"; then
-  echo "📝  Backing up existing dotfiles..."
-  BACKUPS="$HOME/dotfiles_backup_$(date +"%m_%d_%Y_%H%M%S")"
-  mkdir "$BACKUPS"
-
-  for DOTFILE in $DOTFILES; do
-    [ -f "$HOME/.$DOTFILE" ] && mv "$HOME/.$DOTFILE" "$BACKUPS"
-  done
-
-  [ -d ~/.vim ] && mv -f ~/.vim $BACKUPS
-
-  echo "✅  done!"
+which brew 1>&/dev/null
+if [ ! "$?" -eq 0 ] ; then
+  echo "Homebrew not installed. Attempting to install Homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if [ ! "$?" -eq 0 ] ; then
+   echo "Something went wrong. Exiting..." && exit 1
+  fi
 fi
 
-echo "📝  Adding new dotfiles..."
+brew update
+brew upgrade
+brew install coreutils
 
-for FILE in $DOTFILES; do
-  cp -f $DIR/.$FILE ~/.$FILE
-done
+#########
+# Tools #
+#########
 
+brew install fzf
+brew install node
+brew install the_silver_searcher
+brew install tmux
+brew install vim
+brew install yarn
+brew install zsh
+brew install zsh-completions
+
+# nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# Set zsh as default shell
+chsh -s /bin/zsh
+
+# Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Spaceship Prompt
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -sv "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
+# vimrc
 cp -rf $DIR/.vim ~/.vim
-echo "✅  done!"
 
-echo "Please open a fresh terminal 🐊"
+# zshrc
+ln -sv "$HOME/dotfiles/.zshrc" "$HOME"
+
+# tmuxconf
+ln -sv "$HOME/dotfiles/.tmux.conf" "$HOME"

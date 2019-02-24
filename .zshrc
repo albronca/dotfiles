@@ -1,4 +1,4 @@
-export ZSH=/Users/abronca/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME='spaceship'
 SPACESHIP_PROMPT_ORDER=(

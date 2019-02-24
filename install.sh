@@ -51,3 +51,7 @@ ln -sv "$HOME/dotfiles/.zshrc" "$HOME"
 
 # tmuxconf
 ln -sv "$HOME/dotfiles/.tmux.conf" "$HOME"
+
+# git stuff
+ln -sv "$HOME/dotfiles/.gitconfig" "$HOME"
+ln -sv "$HOME/dotfiles/.gitignore_global" "$HOME"

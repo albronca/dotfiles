@@ -1,0 +1,14 @@
+#!/usr/bin/env osascript -l JavaScript
+
+(function spotifyStatus() {
+  var spotify = Application('Spotify');
+
+  if (spotify.running() && spotify.playerState() === 'playing') {
+    var currentTrack = spotify.currentTrack();
+    var artistName = currentTrack.artist();
+    var trackName = currentTrack.name();
+    var info = "♫ " + artistName + " - " + trackName;
+
+    return info.replace(/#/g, "")
+  }
+})()

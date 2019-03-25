@@ -51,6 +51,7 @@ ln -sv "$HOME/dotfiles/.zshrc" "$HOME"
 
 # tmuxconf
 ln -sv "$HOME/dotfiles/.tmux.conf" "$HOME"
+ln -sv "$HOME/dotfiles/tmux-spotify-info" "$HOME"
 
 # git stuff
 ln -sv "$HOME/dotfiles/.gitconfig" "$HOME"

@@ -1,11 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME='spaceship'
+# ZSH_THEME='agnoster'
 SPACESHIP_PROMPT_ORDER=(
   user
   dir
   host
   git
+  node
   ruby
   exec_time
   line_sep
@@ -13,6 +15,7 @@ SPACESHIP_PROMPT_ORDER=(
   char
 )
 SPACESHIP_CHAR_SYMBOL='↪ '
+SPACESHIP_RUBY_SYMBOL='⧩ '
 
 plugins=(
   git
